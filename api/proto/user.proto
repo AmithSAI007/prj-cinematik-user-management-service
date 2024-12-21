@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "prj-cinematik-user-management-service/api/proto;user";
+
+message RegisterUserRequest {
+	string first_name = 1;
+	string last_name = 2;
+	string email = 3;
+	string password = 4;
+}
+
+message RegisterUserResponse {
+	string user_id = 1;
+	string message = 2;
+}
+
+message AuthenticateUserRequest {
+	string email = 1;
+	string message = 2;
+}
+
+message AuthenticateUserResponse {
+	string access_token = 1;
+	string refresh_token = 2;
+	int64 expires_in = 3;
+	string message = 4;
+}
